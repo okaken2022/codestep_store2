@@ -1,3 +1,4 @@
+@charset "UTF-8";
 html {
   font-size: 100%;
 }
@@ -14,6 +15,65 @@ ul li {
 a {
   text-decoration: none;
   color: #333333;
+}
+
+#toggle-btn {
+  position: relative;
+  /*ボタン内側の基点となるためrelativeを指定*/
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  background: #fff;
+}
+
+#toggle-btn span {
+  display: inline-block;
+  -webkit-transition: all .4s;
+  transition: all .4s;
+  /*アニメーションの設定*/
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background-color: #666;
+}
+
+#toggle-btn span:nth-child(1) {
+  top: 10px;
+}
+
+#toggle-btn span:nth-child(1).open {
+  -webkit-transform: translateY(4px) rotate(-45deg);
+          transform: translateY(4px) rotate(-45deg);
+  background-color: white;
+  z-index: 20;
+}
+
+#toggle-btn span:nth-child(2) {
+  bottom: 10px;
+}
+
+#toggle-btn span:nth-child(2).open {
+  -webkit-transform: translateY(-4px) rotate(45deg);
+          transform: translateY(-4px) rotate(45deg);
+  background-color: white;
+  z-index: 20;
+}
+
+#mask {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #000;
+  opacity: 0.8;
+  z-index: 10;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  display: none;
+}
+
+#mask.open {
+  display: block;
 }
 
 .wrapper {
@@ -45,7 +105,29 @@ a {
 }
 
 #header nav ul {
-  display: none;
+  z-index: 20;
+  font-size: 0.875rem;
+  position: fixed;
+  width: 300px;
+  top: 0;
+  left: -300px;
+  padding: 36px 50px;
+  opacity: 1;
+  display: block;
+  -webkit-transition: all .5s;
+  transition: all .5s;
+}
+
+#header nav ul.open {
+  left: 0;
+}
+
+#header nav ul li {
+  margin-bottom: 15px;
+}
+
+#header nav ul li a {
+  color: white;
 }
 
 #top {
@@ -55,8 +137,8 @@ a {
 #top ul {
   display: -ms-grid;
   display: grid;
-  -webkit-column-gap: 35px;
-          column-gap: 35px;
+  -webkit-column-gap: 26px;
+          column-gap: 26px;
   -ms-grid-columns: 1fr 1fr 1fr 1fr;
       grid-template-columns: 1fr 1fr 1fr 1fr;
   -ms-grid-rows: 1fr 1fr;
