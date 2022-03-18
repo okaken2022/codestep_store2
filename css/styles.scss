@@ -5,7 +5,10 @@ html {
 }
 
 body {
-
+  color: #333;
+  font-size: 0.875rem;
+  min-height: 100vh;
+  position: relative;
 }
 
 img {
@@ -79,7 +82,8 @@ a {
 // -------------------common-----------------
 // ------------------------------------------
 .wrapper {
-  max-width: 1360px;
+  // width: 100%;
+  max-width: 1280px;
   padding: 0 40px;
   margin: 0 auto;
 }
@@ -88,8 +92,13 @@ a {
 // -------------------header-----------------
 // ------------------------------------------
 #header {
-  width: 100%;
+  position: fixed;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  // width: 100%;
   height: 80px;
+  background-color: #fff;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -127,12 +136,13 @@ a {
 // ------------------------------------------
 
 #top {
+  padding-top: 80px;
   padding-bottom: 160px;
   ul {
     display: grid;
-    column-gap: 26px;
+    column-gap: 2.7%;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
+    // grid-template-rows: 1fr 1fr;
     a {
       cursor: pointer;
       transition: all 0.5s;
@@ -151,11 +161,18 @@ a {
       }
     }
   }
-  .view-more-link {
+  .link {
     text-align: center;
-    a {
-      font-size: 0.875rem;
-      display: inline-block;
+    ul {
+      display: flex;
+      text-align: center;
+      justify-content: center;
+      column-gap: 0;
+      li {
+        padding: 0 20px;
+        display: inline-block;
+        font-size: 0.875rem;
+      }
     }
   }
 }
@@ -182,3 +199,85 @@ a {
     font-size: 0.625rem;
   }
 }
+// ------------------------------------------
+// ------------------items-------------------
+// ------------------------------------------
+#container {
+  padding-top: 120px;
+  padding-bottom: 160px;
+  .page-title {
+    margin-bottom: 30px;
+  }
+}
+.items {
+  max-width: 800px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 60px;
+  .item-image {
+    width: 50%;
+  }
+  .item-text {
+    width: 42%;
+    p {
+      margin-bottom: 30px;
+    } 
+    dl {
+      width: 100%;
+      display: flex;
+      flex-wrap: wrap;
+      dt {
+        width: 30%;
+      }
+      dd {
+        width: 70%;
+      }
+    }
+  }
+
+}
+.link {
+  text-align: center;
+}
+
+
+
+// ------------------------------------------
+// ------------------footer------------------
+// ------------------------------------------
+.products {
+  .page-title {
+    padding-top: 40px;
+    padding-bottom: 30px;
+  }
+}
+
+// ------------------------------------------
+// ---------------responsive-----------------
+// ------------------------------------------
+
+
+
+@media screen and (max-width: 900px) {
+  #top {
+    ul {
+      display: grid;
+      column-gap: 5.7%;
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+  .items {
+    flex-direction: column;
+    .item-image {
+      width: 100%;
+      margin-bottom: 30px;
+    }
+    .item-text {
+      width: 100%;
+    }
+  }
+}
+
+
+

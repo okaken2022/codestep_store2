@@ -6,7 +6,7 @@
   const span1 = document.querySelectorAll('span')[0];
   const span2 = document.querySelectorAll('span')[1];
   const ham = document.getElementById('toggle-btn');
-  const hamMenu = document.getElementById('product-list')
+  const hamMenu = document.getElementById('product-list');
 
   //ハンバーガーメニューアイコンを押した際の動き
   ham.addEventListener('click', () => {
