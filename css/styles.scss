@@ -9,6 +9,7 @@ body {
   font-size: 0.875rem;
   min-height: 100vh;
   position: relative;
+
 }
 
 img {
@@ -202,7 +203,7 @@ a {
 // ------------------------------------------
 // ------------------items-------------------
 // ------------------------------------------
-#container {
+.container {
   padding-top: 120px;
   padding-bottom: 160px;
   .page-title {
@@ -244,12 +245,61 @@ a {
 
 
 // ------------------------------------------
-// ------------------footer------------------
+// ------------------products----------------
 // ------------------------------------------
 .products {
   .page-title {
     padding-top: 40px;
     padding-bottom: 30px;
+  }
+}
+
+// ------------------------------------------
+// ------------------company----------------
+// ------------------------------------------
+#company {
+  .company-data {
+    max-width: 600px;
+    dl {
+      box-sizing: content-box;
+      display: flex;
+      flex-wrap: wrap;
+      margin-bottom: 20px;
+      width: 100%;
+      dt {
+        width: 30%;
+        padding: 20px 10px;
+        box-sizing: border-box;
+        border-bottom: 1px solid #dcdbdb;
+        &:last-of-type {
+          border: none;
+        }
+      }
+      dd {
+        width: 70%;
+        padding: 20px 10px;
+        box-sizing: border-box;
+        border-bottom: 1px solid #dcdbdb;
+        &:last-of-type {
+          border: none;
+        }
+      }
+    }
+  }
+  iframe {
+    filter: grayscale(1);
+  }
+}
+
+// ------------------------------------------
+// -------------------about------------------
+// ------------------------------------------
+#about {
+  max-width: 600px;
+  margin-left: 0;
+  p {
+    line-height: 1.9;
+    margin-bottom: 30px;
   }
 }
 
@@ -275,6 +325,25 @@ a {
     }
     .item-text {
       width: 100%;
+    }
+  }
+  #company {
+    .company-data {
+      dl {
+        flex-direction: column;
+        dt {
+          padding-bottom: 10px;
+          width: 100%;
+          border: none;
+        }
+        dd {
+          width: 100%;
+          padding-top: 0;
+          &:last-of-type {
+            border: none;
+          }
+        }
+      }
     }
   }
 }
